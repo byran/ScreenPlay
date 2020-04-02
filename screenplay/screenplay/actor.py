@@ -1,16 +1,17 @@
-from typing import List, Dict
+from typing import List
 from .ability import Ability
 from .condition import Condition
 from .task_or_action import TaskOrAction
 from .action import Action
 from .log import Log
+from .actor_state import ActorState
 
 
 class Actor:
     def __init__(self, name: str):
         self.name = name
         self.abilities: List[Ability] = []
-        self._state: Dict[str, any] = {}
+        self._state: ActorState = ActorState()
 
     @staticmethod
     def named(name: str):

@@ -9,9 +9,9 @@ class Using(Task):
 
     def perform_as(self, actor: Actor):
         assert self.id is not None, "No id specified for Using"
-        actor.state[self.id] = actor.attempts_to(
+        actor.state[self.id].set(actor.attempts_to(
             self.task_or_action
-        )
+        ))
 
     def as_(self, id):
         self.id = id

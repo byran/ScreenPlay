@@ -1,5 +1,5 @@
 import pytest
-from screenplay import Actor, see_that, using
+from screenplay import Actor, see_that, using, value_of
 from screenplay.matchers.equals import equals
 from .stub_abilities import StubAbility, SecondStubAbility
 from .stub_tasks import StubTask, StubTaskWithResult
@@ -96,7 +96,7 @@ def test_An_Actors_state_can_be_updated_with_a_using_task():
         using(StubTaskWithResult(2)).as_('Bob')
     )
 
-    assert frank.state['Bob'] == 2
+    assert value_of(frank.state['Bob']) == 2
 
 
 def test_A_using_task_without_an_id_asserts():
@@ -115,4 +115,4 @@ def test_A_using_task_whose_sub_task_does_not_return_a_value_sets_the_state_to_n
         using(StubTask()).as_('Simon')
     )
 
-    assert frank.state['Simon'] is None
+    assert value_of(frank.state['Simon']) is None
