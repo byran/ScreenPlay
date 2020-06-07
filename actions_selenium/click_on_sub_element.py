@@ -22,7 +22,7 @@ class _click_on_sub_element_of_stored_element(Action):
     def __init__(self, locator, id: str):
         super().__init__()
         self._locator = locator
-        self._id = None
+        self._id = id
 
     @log_message("Clicks on '{self._locator}' of '{self._id}")
     def perform_as(self, actor: Actor):
