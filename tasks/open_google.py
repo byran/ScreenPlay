@@ -1,5 +1,5 @@
 from screenplay import Task, Actor, log_message
-from actions.navigate_to import navigate_to
+from actions_selenium import navigate_to
 
 
 class open_google(Task):
