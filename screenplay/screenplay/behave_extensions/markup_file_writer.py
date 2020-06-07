@@ -27,5 +27,8 @@ class MarkupFileWriter:
     def end_table(self):
         pass
 
-    def text_with_style(self, text: str, style: str):
-        pass
+    def text_with_style(self, text: str, style: str) -> str:
+        return ''
+
+    def link_to_relative_file(self, file: str) -> str:
+        return ''

@@ -78,5 +78,8 @@ class SphinxFileWriter(MarkupFileWriter):
             write_row(row)
         self._file.write(table_seperator)
 
-    def text_with_style(self, text: str, style: str):
+    def text_with_style(self, text: str, style: str) -> str:
         return ':{style}:`{text}`'.format(text=text, style=style)
+
+    def link_to_relative_file(self, file: str) -> str:
+        return ':download:`{file}`'.format(file=file)
