@@ -9,7 +9,7 @@ interact with the system under test.
 
 ``` python
 from screenplay import Ability, Actor
-from screenplay.behave import Actors
+from screenplay.behave_extensions import Actors
 
 class interact_with_the_system(Ability):
     def __init__(self):
@@ -43,7 +43,7 @@ Normally you would use the `behave.Actors.add_person_called(...)` method.**
 ## behave.Actors
 
 ``` python
-from screenplay.behave import Actors
+from screenplay.behave_extensions import Actors
 from abilities.interact_with_the_system import interact_with_the_system
 
 actors = Actors()

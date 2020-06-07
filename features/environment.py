@@ -1,5 +1,5 @@
 from behave import runner, model
-from screenplay.behave import add_screenplay_objects_to
+from screenplay.behave_extensions import add_screenplay_objects_to
 from screenplay.log import Log
 from abilities.browse_the_web import browse_the_web
 

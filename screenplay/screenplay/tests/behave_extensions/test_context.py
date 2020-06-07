@@ -1,4 +1,4 @@
-from screenplay.behave import Actors, add_screenplay_objects_to
+from screenplay.behave_extensions import Actors, add_screenplay_objects_to
 from screenplay import Actor
 
 from screenplay.tests.stub_abilities import StubAbility
