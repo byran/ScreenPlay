@@ -4,6 +4,7 @@ from screenplay.condition import see_that
 from tasks.search_for import search_for
 from tasks.open_google import open_google
 from questions.the_search_result_titles import the_search_result_titles
+from tasks_selenium import save_screenshot
 
 # use_step_matcher("re")
 
@@ -27,4 +28,7 @@ def step_impl(context: runner.Context, search_text: str):
 def step_impl(context: runner.Context, expected: str):
     context.they.should(
         see_that(the_search_result_titles(), contains(expected))
+            .if_they_do_not(
+                save_screenshot()
+            )
     )
