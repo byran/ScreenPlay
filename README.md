@@ -1,6 +1,6 @@
 # Python ScreenPlay example
 
-![](https://github.com/byran/Python-ScreenPlay/workflows/Run%20tests/badge.svg)
+![](../../workflows/Run%20tests/badge.svg)
 
 [Linux instructions](#Linux)
 
