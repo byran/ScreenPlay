@@ -12,7 +12,7 @@ class _find_stored_element_with_text(Action):
         self._id = id
         return self
 
-    @log_message('Finding element with text \'{self._text}\' from \'{self._id}\'')
+    @log_message('Finding element with text \'{self._text}\' from \'{self._sourceId}\'')
     def perform_as(self, actor: Actor):
         element = None
 

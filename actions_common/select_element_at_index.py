@@ -7,7 +7,7 @@ class _select_element_at_index_from_stored_list(Action):
         self._index: int = index
         self._sourceId: str = id
         self._destinationId: str = None
-    
+
     def and_store_in(self, id: str):
         self._destinationId = id
         return self
@@ -17,7 +17,7 @@ class _select_element_at_index_from_stored_list(Action):
         items = actor.state[self._sourceId].value
         assert len(items) > self._index, "'{id}' does not have an enough elements to access element {index}" \
             .format(id=self._sourceId, index=self._index)
-        
+
         item = items[self._index]
 
         if self._destinationId is not None:

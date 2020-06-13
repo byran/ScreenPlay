@@ -3,6 +3,7 @@ from .sphinx_file_writer import SphinxFileWriter
 from .markup_feature_file_writer import write_markup_feature_file
 from os import path
 
+
 class SphinxScreenplayFormatter(CollectingFormatter):
     def __init__(self, stream_opener, config):
         super().__init__(stream_opener, config)

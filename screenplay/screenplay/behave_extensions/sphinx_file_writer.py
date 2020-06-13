@@ -8,21 +8,23 @@ class SphinxFileWriter(MarkupFileWriter):
         self._table_headers: List[str] = []
         self._table_rows: List[List[str]] = []
 
-        self._file.write('.. role:: passed\n\n')
-        self._file.write('.. role:: failed\n\n')
-        self._file.write('.. role:: notrun\n\n')
-        self._file.write('.. role:: notimplemented\n\n')
+        self._file.write('.. role:: passed\n')
+        self._file.write('.. role:: failed\n')
+        self._file.write('.. role:: notrun\n')
+        self._file.write('.. role:: notimplemented\n')
+        self._file.write('.. role:: tags\n')
+        self._file.write('\n')
 
     def write_line(self, text: str):
         self._file.write('| ' + text + '\n')
 
-    def new_paragraph(self):
-        self._file.write('\n')
-
-    def write_paragraph(self, *lines: str):
+    def write_lines(self, *lines: str):
         for line in lines:
             self._file.write('| ' + line + '\n')
         self._file.write('\n')
+
+    def write_tags(self, text: str):
+        self._file.write(':tags:`{text}`\n\n'.format(text=text))
 
     def _write_heading_level(self, text: str, char: str):
         markup = (char * len(text)) + '\n\n'
@@ -77,9 +79,13 @@ class SphinxFileWriter(MarkupFileWriter):
         for row in self._table_rows:
             write_row(row)
         self._file.write(table_seperator)
+        self._file.write('\n')
 
     def text_with_style(self, text: str, style: str) -> str:
         return ':{style}:`{text}`'.format(text=text, style=style)
 
     def link_to_relative_file(self, file: str) -> str:
         return ':download:`{file}`'.format(file=file)
+
+    def horizontal_line(self):
+        self._file.write('----\n\n')

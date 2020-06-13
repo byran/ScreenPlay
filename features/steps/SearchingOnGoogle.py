@@ -28,7 +28,7 @@ def step_impl(context: runner.Context, search_text: str):
 def step_impl(context: runner.Context, expected: str):
     context.they.should(
         see_that(the_search_result_titles(), contains(expected))
-            .regardless_of_that(
-                save_screenshot()
-            )
+        .regardless_of_that(
+            save_screenshot()
+        )
     )

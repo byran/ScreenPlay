@@ -25,7 +25,7 @@ class Condition:
     def _run_actions_as(self, actor, actions):
         try:
             actor.attempts_to(*actions)
-        except:
+        except Exception:
             pass
 
     def check_as(self, actor):

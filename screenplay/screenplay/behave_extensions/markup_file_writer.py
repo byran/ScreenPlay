@@ -3,10 +3,10 @@ class MarkupFileWriter:
     def write_line(self, text: str):
         pass
 
-    def new_paragraph(self):
+    def write_lines(self, *lines: str):
         pass
 
-    def write_paragraph(self, *lines: str):
+    def write_tags(self, text: str):
         pass
 
     def write_heading_1(self, text: str):
@@ -32,3 +32,6 @@ class MarkupFileWriter:
 
     def link_to_relative_file(self, file: str) -> str:
         return ''
+
+    def horizontal_line(self):
+        pass

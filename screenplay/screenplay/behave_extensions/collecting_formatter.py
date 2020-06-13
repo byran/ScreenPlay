@@ -1,6 +1,5 @@
 from behave.model import Feature, Scenario, Step
 from behave.formatter.base import Formatter
-from behave.model_core import Status
 from typing import List
 from itertools import chain
 from ..log import Log

@@ -1,7 +1,5 @@
-from screenplay import Action, Actor, log_message
+from screenplay import Action, Actor
 from abilities.browse_the_web import browser_for
-from selenium.webdriver.remote.webdriver import WebDriver
-from os import path
 
 
 class save_screenshot_to_file(Action):
