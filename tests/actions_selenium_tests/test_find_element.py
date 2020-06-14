@@ -1,3 +1,4 @@
+import pytest
 from screenplay import Actor
 from abilities import browse_the_web
 from actions_selenium import navigate_to, find_element
@@ -23,6 +24,7 @@ def test_an_element_that_exists_is_found_is_stored_and_returned():
     assert stored_value.text == 'hello'
 
 
+@pytest.mark.slow
 def test_finding_an_element_that_does_not_exists_stores_and_returns_None():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
