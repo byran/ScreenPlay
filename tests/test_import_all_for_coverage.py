@@ -1,3 +1,4 @@
+# flake8: noqa
 import actions_common
 import actions_selenium
 import matchers_selenium

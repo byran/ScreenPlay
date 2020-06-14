@@ -49,7 +49,8 @@ def test_hiding_the_text_from_the_log_when_entering_text_into_a_stored_element()
 
     Log.to_actions()
 
-    log_text = capture_log_messages(user,
+    log_text = capture_log_messages(
+        user,
         enter_text('Hello World').into_stored_element('textbox').and_do_not_log_text()
     )
 
@@ -66,7 +67,8 @@ def test_hiding_the_text_from_the_log_when_entering_text_into_a_located_element(
 
     Log.to_actions()
 
-    log_text = capture_log_messages(user,
+    log_text = capture_log_messages(
+        user,
         enter_text('Hello World').into_element((By.ID, 'third_text')).and_do_not_log_text()
     )
 
