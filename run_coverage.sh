@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-coverage run --module pytest
+coverage run --branch --module pytest
 readonly EXIT_CODE=$?
 
-coverage report --omit=".venv/*" --show-missing > coverage.txt
+coverage report --omit=".venv/*" --show-missing > coverage/report.txt
+cat coverage/report.txt
 
-cat coverage.txt
+coverage html --omit=".venv/*" -d coverage/html
 
 exit ${EXIT_CODE}

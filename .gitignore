@@ -18,3 +18,4 @@ __pycache__/
 # Coverage
 /.coverage
 /coverage.txt
+/coverage_html/
