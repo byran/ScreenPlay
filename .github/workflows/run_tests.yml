@@ -26,3 +26,8 @@ jobs:
     - name: Test with pytest
       run: |
         ./run_coverage.sh
+    - name: Upload coverage artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage
+        path: coverage.txt
