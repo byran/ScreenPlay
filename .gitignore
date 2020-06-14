@@ -14,3 +14,7 @@ __pycache__/
 
 # Screen play results output file
 /screenplay.output
+
+# Coverage
+/.coverage
+/coverage.txt
