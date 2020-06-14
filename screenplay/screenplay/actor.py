@@ -27,6 +27,7 @@ class Actor:
 
     def can(self, *abilities: Ability):
         self.abilities.extend(abilities)
+        return self
 
     who_can = can
 
