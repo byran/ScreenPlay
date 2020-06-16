@@ -10,5 +10,5 @@ def test_fail_with_message_causes_an_assertion():
         user.attempts_to(
             fail_with_message('simple message')
         )
-    
+
     assert exception.value.args[0] == 'simple message'
