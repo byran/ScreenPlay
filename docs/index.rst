@@ -18,6 +18,14 @@ Welcome to Python-ScreenPlay's documentation!
 
    test_results/*
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Unit Test Results:
+   :glob:
+
+   unittest_results/unittest_results
+
 Indices and tables
 ==================
 
