@@ -33,3 +33,8 @@
 .tags {
   font-style: italic;
 }
+
+.code_coverage {
+  width: 100%;
+  height: 60vh;
+}

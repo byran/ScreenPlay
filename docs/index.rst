@@ -24,6 +24,7 @@ Welcome to Python-ScreenPlay's documentation!
    :caption: Unit Test Results:
    :glob:
 
+   unittest_results/coverage
    unittest_results/unittest_results
 
 Indices and tables
