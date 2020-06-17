@@ -25,7 +25,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --ignore=F811
     - name: Test with pytest
       run: |
-        ./run_coverage.sh
+        ./run_unittests_with_coverage.sh
     - name: Upload coverage artifact
       uses: actions/upload-artifact@v1
       with:
