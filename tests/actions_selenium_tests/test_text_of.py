@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_the_text_of_a_stored_element_is_stored_and_returned():
+def test_accessing_the_text_of_a_stored_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -24,7 +24,7 @@ def test_the_text_of_a_stored_element_is_stored_and_returned():
     assert stored_value == 'hello'
 
 
-def test_the_text_of_a_stored_element_is_only_returned_if_no_request_to_store_is_requested():
+def test_accessing_the_text_of_a_stored_element_without_storing_it():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -36,7 +36,7 @@ def test_the_text_of_a_stored_element_is_only_returned_if_no_request_to_store_is
     assert returned_value == 'hello'
 
 
-def test_stripping_the_text_removes_whitespace():
+def test_stripping_whitespace_from_the_text():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(

@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_a_sub_element_can_be_found_by_its_text():
+def test_finding_a_sub_element_by_its_text():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     user.attempts_to(

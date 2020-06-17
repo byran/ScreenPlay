@@ -10,7 +10,7 @@ from ..capture_log_messages import capture_log_messages
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_text_can_be_entered_into_a_stored_element():
+def test_entering_text_into_a_stored_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -25,7 +25,7 @@ def test_text_can_be_entered_into_a_stored_element():
     assert returned_value == 'Hello World'
 
 
-def test_text_can_be_entered_into_a_located_element():
+def test_entering_text_into_a_located_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(

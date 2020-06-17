@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_a_subelement_of_a_stored_element_can_be_clicked_on():
+def test_clicking_on_a_subelement_of_a_stored_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     user.attempts_to(
@@ -28,7 +28,7 @@ def test_a_subelement_of_a_stored_element_can_be_clicked_on():
     assert returned_value == 'second'
 
 
-def test_a_subelement_of_a_WebElement_can_be_clicked_on():
+def test_clicking_on_a_subelement_of_a_WebElement_can_be():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     element = user.attempts_to(

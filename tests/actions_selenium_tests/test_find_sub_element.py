@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_finding_a_subelement_of_a_stored_element_is_stored_and_returned():
+def test_finding_a_subelement_of_a_stored_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(

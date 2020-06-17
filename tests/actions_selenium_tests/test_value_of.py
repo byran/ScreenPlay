@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_the_value_of_a_stored_element_is_returned():
+def test_accessing_the_value_of_a_stored_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -20,7 +20,7 @@ def test_the_value_of_a_stored_element_is_returned():
     assert returned_value == 'fourth textbox'
 
 
-def test_a_whitespace_stripped_value_of_a_stored_element_is_returned():
+def test_stripping_the_whitespace_of_the_accessed_value():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     locator = (By.ID, 'third_text')

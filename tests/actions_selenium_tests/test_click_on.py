@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_a_stored_on_element_can_be_clicked_on():
+def test_clicking_on_a_stored_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -22,7 +22,7 @@ def test_a_stored_on_element_can_be_clicked_on():
     assert returned_value == 'first'
 
 
-def test_a_located_element_can_be_clicked_on():
+def test_clicking_on_a_located_element():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(

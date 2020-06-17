@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_an_element_found_by_locator_and_text_is_stored_and_returned():
+def test_finding_an_element_by_locator_and_text():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -24,7 +24,7 @@ def test_an_element_found_by_locator_and_text_is_stored_and_returned():
     assert stored_value.text == 'fourth_li'
 
 
-def test_an_element_found_by_locator_and_text_can_by_just_returned():
+def test_finding_an_element_by_locator_and_text_without_storing_it():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
@@ -36,7 +36,7 @@ def test_an_element_found_by_locator_and_text_can_by_just_returned():
 
 
 @pytest.mark.slow
-def test_trying_to_find_an_element_that_does_not_exist_stores_and_returns_None():
+def test_trying_to_find_an_element_that_does_not_exist():
     user = Actor.named('user').who_can(browse_the_web.using_Chrome())
 
     returned_value = user.attempts_to(
