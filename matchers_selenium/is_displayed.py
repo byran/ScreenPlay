@@ -5,7 +5,7 @@ from selenium.webdriver.remote.webelement import WebElement
 class _IsDisplayedMatcher(Matcher):
     def __init__(self):
         super().__init__()
-        self._fail_message = 'the element was not visible'
+        self._fail_message = 'the element was not displayed'
 
     def matches(self, answer: WebElement) -> bool:
         if answer.is_displayed():
