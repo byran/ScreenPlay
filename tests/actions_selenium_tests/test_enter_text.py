@@ -1,11 +1,9 @@
-from screenplay import Actor
 from screenplay.log import Log
-from abilities import browse_the_web
 from actions_selenium import navigate_to, find_element, text_of, click_on, enter_text
 from os import path
 from selenium.webdriver.common.by import By
 from ..capture_log_messages import capture_log_messages
-from .user_fixture import user
+from .user_fixture import user  # noqa: F401
 
 
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')

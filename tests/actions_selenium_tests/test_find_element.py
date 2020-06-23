@@ -1,10 +1,8 @@
 import pytest
-from screenplay import Actor
-from abilities import browse_the_web
 from actions_selenium import navigate_to, find_element
 from os import path
 from selenium.webdriver.common.by import By
-from .user_fixture import user
+from .user_fixture import user  # noqa: F401
 
 
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
