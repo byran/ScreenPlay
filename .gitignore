@@ -14,6 +14,3 @@ __pycache__/
 /.coverage
 /coverage.txt
 /coverage_html/
-
-# Unittest results
-/unittest_results.xml
