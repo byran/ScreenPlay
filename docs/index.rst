@@ -27,6 +27,13 @@ Welcome to Python-ScreenPlay's documentation!
    unittest_results/coverage
    unittest_results/unittest_results
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Metrics:
+
+   metrics/code_metrics.rst
+
 Indices and tables
 ==================
 
