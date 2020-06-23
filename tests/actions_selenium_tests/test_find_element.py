@@ -4,14 +4,13 @@ from abilities import browse_the_web
 from actions_selenium import navigate_to, find_element
 from os import path
 from selenium.webdriver.common.by import By
+from .user_fixture import user
 
 
 test_page = 'file://' + path.join(path.dirname(__file__), 'elements.html')
 
 
-def test_finding_an_element_that_exists():
-    user = Actor.named('user').who_can(browse_the_web.using_Chrome())
-
+def test_finding_an_element_that_exists(user):
     returned_value = user.attempts_to(
         navigate_to(test_page),
         find_element((By.ID, 'hello_id')).and_store_as('hello')
@@ -25,9 +24,7 @@ def test_finding_an_element_that_exists():
 
 
 @pytest.mark.slow
-def test_attempting_to_find_an_element_that_does_not_exists():
-    user = Actor.named('user').who_can(browse_the_web.using_Chrome())
-
+def test_attempting_to_find_an_element_that_does_not_exists(user):
     returned_value = user.attempts_to(
         navigate_to(test_page),
         find_element((By.ID, 'does_not_exist')).and_store_as('hello')
