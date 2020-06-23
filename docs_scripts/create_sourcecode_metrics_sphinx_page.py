@@ -43,6 +43,43 @@ def process_common(common, files):
         file_metrics = files[file]
         file_metrics.lines_of_code = common[file]['loc']
 
+
+def calculate_average_and_max_complexity(files):
+    max_complexity = 0
+    total = 0
+    count = 0
+    for file in files:
+        functions = files[file].functions
+        for function in functions:
+            f = functions[function]
+            total += f.complexity
+            max_complexity = max(max_complexity, f.complexity)
+            count += 1
+
+    if count == 0:
+        return (0, 0)
+    return (total / count, max_complexity)
+
+
+
+def calculate_summary_file_metrics(files):
+    max_loc = 0
+    total_loc = 0
+    min_maintainability = 100
+    total_maintainability = 0
+    count = 0
+    for file in files:
+        f = files[file]
+        max_loc = max(max_loc, f.lines_of_code)
+        total_loc += f.lines_of_code
+        min_maintainability = min(min_maintainability, f.maintainability)
+        total_maintainability += f.maintainability
+        count += 1
+    
+    if count == 0:
+        return (0, 0, 0, 0)
+    return (total_loc / count, max_loc, total_maintainability / count, min_maintainability)
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print('Invalid arguments:\n{cmd} <output file>\n'.format(cmd=sys.argv[0]))
@@ -67,8 +104,23 @@ if __name__ == "__main__":
 
         fileWriter.write_heading_1('Code metrics')
 
+        fileWriter.write_heading_2('Summary')
+
+        fileWriter.begin_table('metric', 'value')
+        (average_complexity, max_complexity) = calculate_average_and_max_complexity(files)
+        fileWriter.add_table_row('average complexity', str(average_complexity))
+        fileWriter.add_table_row('max complexity', str(max_complexity))
+        (average_loc, max_loc, average_maintainability, min_maintainability) = calculate_summary_file_metrics(files)
+        fileWriter.add_table_row('average lines of code', str(average_loc))
+        fileWriter.add_table_row('max lines of code', str(max_loc))
+        fileWriter.add_table_row('average maintainability', str(average_maintainability))
+        fileWriter.add_table_row('min maintainability', str(min_maintainability))
+        fileWriter.end_table()
+
+        fileWriter.write_heading_2('Individual file code metrics')
+
         for file in files:
-            fileWriter.write_heading_2(file)
+            fileWriter.write_heading_3(file)
             file_metrics = files[file]
 
             fileWriter.write_lines(
