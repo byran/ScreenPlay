@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import sys, json
+import sys
+import json
 from screenplay.behave_extensions.sphinx_file_writer import SphinxFileWriter
 
 
@@ -61,7 +62,6 @@ def calculate_average_and_max_complexity(files):
     return (total / count, max_complexity)
 
 
-
 def calculate_summary_file_metrics(files):
     max_loc = 0
     total_loc = 0
@@ -75,10 +75,11 @@ def calculate_summary_file_metrics(files):
         min_maintainability = min(min_maintainability, f.maintainability)
         total_maintainability += f.maintainability
         count += 1
-    
+
     if count == 0:
         return (0, 0, 0, 0)
     return (total_loc / count, max_loc, total_maintainability / count, min_maintainability)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

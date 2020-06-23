@@ -2,8 +2,7 @@ from screenplay.behave_extensions.sphinx_file_writer import SphinxFileWriter
 import io
 
 
-start_of_sphinx_file = \
-".. role:: passed\n\
+start_of_sphinx_file = ".. role:: passed\n\
 .. role:: failed\n\
 .. role:: notrun\n\
 .. role:: notimplemented\n\
@@ -27,7 +26,8 @@ def test_a_heading_1_outputs_text_with_equals_symbols_below():
 
     expected_text = start_of_sphinx_file + 'Hello\n=====\n\n'
 
-    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'.format(expected=expected_text, actual=stream.getvalue())
+    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'\
+        .format(expected=expected_text, actual=stream.getvalue())
 
 
 def test_a_heading_2_outputs_text_with_minus_symbols_below():
@@ -39,7 +39,8 @@ def test_a_heading_2_outputs_text_with_minus_symbols_below():
 
     expected_text = start_of_sphinx_file + 'World\n-----\n\n'
 
-    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'.format(expected=expected_text, actual=stream.getvalue())
+    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'\
+        .format(expected=expected_text, actual=stream.getvalue())
 
 
 def test_a_heading_3_outputs_text_with_circumflex_symbols_below():
@@ -51,7 +52,8 @@ def test_a_heading_3_outputs_text_with_circumflex_symbols_below():
 
     expected_text = start_of_sphinx_file + 'Something\n^^^^^^^^^\n\n'
 
-    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'.format(expected=expected_text, actual=stream.getvalue())
+    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'\
+        .format(expected=expected_text, actual=stream.getvalue())
 
 
 def test_a_table_is_output_correctly():
@@ -72,4 +74,5 @@ def test_a_table_is_output_correctly():
         'ghi   jkl   \n' + \
         '===== ======\n\n'
 
-    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'.format(expected=expected_text, actual=stream.getvalue())
+    assert stream.getvalue() == expected_text, '"{actual}"\n\n"{expected}"\n'\
+        .format(expected=expected_text, actual=stream.getvalue())

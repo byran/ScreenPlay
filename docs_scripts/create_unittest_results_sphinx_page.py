@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
         last_file = None
         for testsuite in root:
-            fileWriter.begin_table('Test attribute','value')
+            fileWriter.begin_table('Test attribute', 'value')
             fileWriter.add_table_row('Number of tests', testsuite.attrib['tests'])
             fileWriter.add_table_row('Failing tests', testsuite.attrib['failures'])
             fileWriter.add_table_row('Errors', testsuite.attrib['errors'])
@@ -37,14 +37,14 @@ if __name__ == "__main__":
 
             for testcase in testsuite:
                 test_file_name = testcase.attrib['classname']
-                
+
                 if test_file_name != last_file:
                     if last_file is not None:
                         fileWriter.end_table()
                     last_file = test_file_name
                     fileWriter.write_heading_2(test_file_name)
                     fileWriter.begin_table('Test', 'result')
-                
+
                 if is_failing_test(testcase):
                     fileWriter.add_table_row(testcase.attrib['name'], fail_text)
                 else:
