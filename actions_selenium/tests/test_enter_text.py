@@ -2,7 +2,7 @@ from screenplay.log import Log
 from actions_selenium import navigate_to, find_element, text_of, click_on, enter_text
 from os import path
 from selenium.webdriver.common.by import By
-from ..capture_log_messages import capture_log_messages
+from test_helpers import capture_log_messages
 from .user_fixture import user  # noqa: F401
 
 
