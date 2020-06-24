@@ -8,7 +8,7 @@ import pathlib
 
 
 def before_all(context: runner.Context):
-    repositoryRoot = pathlib.Path(__file__).parent.parent.absolute()
+    repositoryRoot = pathlib.Path(__file__).parent.parent.parent.absolute()
     save_screenshot.path = os.path.join(repositoryRoot, 'docs', 'test_results')
 
 
