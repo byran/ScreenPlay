@@ -5,6 +5,7 @@ from pages.google_homepage import google_homepage
 
 class search_for(Task):
     def __init__(self, text: str):
+        super().__init__()
         self._text = text
 
     @log_message('Enter \'{self._text}\' into google')
