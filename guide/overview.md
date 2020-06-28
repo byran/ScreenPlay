@@ -30,10 +30,15 @@
 
 ### Actions
 
+[actions_common](actions_common.md)
+
 * actions_common.fail_with_message
 * actions_common.if_value_of
 * actions_common.pause_for
 * actions_common.select_element_at_index
+
+actions_selenium
+
 * actions_selenium.click_on
 * actions_selenium.click_on_sub_element
 * actions_selenium.enter_text
@@ -50,8 +55,13 @@
 
 ### Matchers
 
+screenplay.matchers
+
 * screenplay.matchers.contains
 * screenplay.matchers.equals
 * screenplay.matchers.is_an_empty_list
+
+matchers_selenium
+
 * matchers_selenium.is_displayed
 * matchers_selenium.is_not_present
