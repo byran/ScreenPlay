@@ -63,6 +63,7 @@ from actions.click_on import click_on
 
 class search_for_hello_world(Task):
     def __init__(self):
+        super().__init__()
         # Initialise object (optional)
 
     @log_message('')
@@ -79,6 +80,7 @@ from screenplay import Action, Actor, log_message
 
 class click_on(Action):
     def __init__(self):
+        super().__init__()
         # Initialise object (optional)
 
     @log_message('click on ...')
