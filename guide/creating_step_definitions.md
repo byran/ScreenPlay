@@ -153,7 +153,7 @@ def step_impl(context: runner.Context, expected: str):
 ...
 ```
 
-## The completed step definition file
+## A completed step definition file
 
 Following all these steps you will have a file that looks like file below.
 
