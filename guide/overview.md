@@ -13,13 +13,10 @@
    under test
    2. Implement the matcher to check the answer the question returned
 
-## Implementing other ScreenPlay classes
+## Other ScreenPlay features
 
+* Using the Actors state to store information
 * Implementing abilitites
-
-## Other ScreenPlay functions
-
-* Actors state
 
 ## Built in Abilities, Tasks, Actions, Matchers
 
