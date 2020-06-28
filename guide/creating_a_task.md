@@ -157,7 +157,7 @@ class delete_the_file_called(Task):
         self.file_name = file_name
         self.path = None
 
-    def from_directory(self, path: str):
+    def from_the_directory(self, path: str):
         self.path = path
         return self
 
@@ -176,7 +176,7 @@ This type of ```Task``` can be used as follows:
 @step('...')
 def step_impl(context):
     context.they.attempts_to(
-        delete_the_file_called("hello.txt").from_directory("/temp")
+        delete_the_file_called("hello.txt").from_the_directory("/temp")
     )
 ```
 
