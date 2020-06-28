@@ -121,6 +121,17 @@ def step_impl(context: runner.Context, actor: str):
 
 ### 5 Implement the then step definition functions
 
+Import the required questions and matchers to check the state of the system.
+You can then use the actor's ```should``` method to check if the answer to the
+```Question``` matches the expected result of the ```Matcher``` using a
+```Condition``` (usually ```see_that```). The actors ```should``` method can
+take one or more ```Condition```s. ```Condition```s have three methods that
+run a list of tasks depending on the result of the condition:
+
+* ```if_they_do(...)```
+* ```if_they_do_not(...)```
+* ```regardless_of_that(...)```
+
 ```python
 from behave import runner, step
 from screenplay.matchers.contains import contains
@@ -138,7 +149,45 @@ def step_impl(context: runner.Context, expected: str):
             save_screenshot()
         )
     )
+
 ...
 ```
 
-********* TODO: complete this step *********
+## The completed step definition file
+
+Following all these steps you will have a file that looks like file below.
+
+```python
+from behave import runner, step
+from screenplay.matchers.contains import contains
+from screenplay.condition import see_that
+from tasks.search_for import search_for
+from tasks.open_google import open_google
+from questions.the_search_result_titles import the_search_result_titles
+from tasks_selenium import save_screenshot
+
+
+@step(u'{actor} has opened Google')
+def step_impl(context: runner.Context, actor: str):
+    context.actors.switch_active(actor)
+    context.they.attempt_to(
+        open_google()
+    )
+
+
+@step(u'they search for "{search_text}"')
+def step_impl(context: runner.Context, search_text: str):
+    context.they.attempt_to(
+        search_for(search_text)
+    )
+
+
+@step(u"they should see a result for '{expected}'")
+def step_impl(context: runner.Context, expected: str):
+    context.they.should(
+        see_that(the_search_result_titles(), contains(expected))
+        .regardless_of_that(
+            save_screenshot()
+        )
+    )
+```
