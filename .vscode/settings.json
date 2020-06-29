@@ -1,10 +1,20 @@
 {
-	"python.pythonPath": ".venv/bin/python",
-	"restructuredtext.confPath": "${workspaceFolder}/docs",
+	"python.pythonPath": "${workspaceFolder}/.venv",
+	"python.linting.pylintEnabled": false,
+	"python.linting.flake8Enabled": true,
+	"python.linting.flake8Args": [
+		"--max-complexity=10",
+		"--max-line-length=127",
+		"--ignore=F811"
+	],
+	"python.autoComplete.extraPaths": [
+		"./src"
+	],
+	"python.testing.pytestEnabled": true,
+	"python.testing.unittestEnabled": false,
+	"python.testing.nosetestsEnabled": false,
 	"python.testing.pytestArgs": [
 		"."
 	],
-	"python.testing.unittestEnabled": false,
-	"python.testing.nosetestsEnabled": false,
-	"python.testing.pytestEnabled": true
+	"restructuredtext.confPath": "${workspaceFolder}/docs"
 }

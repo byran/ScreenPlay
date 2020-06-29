@@ -6,7 +6,20 @@
 	"configurations": [
 
 		{
-			"name": "Run tests",
+			"name": "Run in progress tests",
+			"type":"python",
+			"request":"launch",
+			"module": "behave",
+			"console": "integratedTerminal",
+			"envFile": "${workspaceFolder}/debug.env",
+			"cwd": "${workspaceFolder}/src",
+			"args": [
+				"-t",
+				"inProgress"
+			]
+		},
+		{
+			"name": "Run all tests",
 			"type":"python",
 			"request":"launch",
 			"module": "behave",
