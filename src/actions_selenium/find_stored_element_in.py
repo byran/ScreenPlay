@@ -1,4 +1,4 @@
-from screenplay import Action, Actor, log_message
+from screenplay import Actor, log_message
 from ._find_base_action import find_base_action
 
 

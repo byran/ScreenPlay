@@ -1,4 +1,4 @@
-from screenplay import Action, Actor, log_message
+from screenplay import Actor, log_message
 from abilities.browse_the_web import waiting_browser_for
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
 from selenium.webdriver.remote.webdriver import WebElement
