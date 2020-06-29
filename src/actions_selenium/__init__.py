@@ -6,6 +6,7 @@ from .find_element import find_element
 from .find_elements import find_elements
 from .find_stored_element_in import find_stored_element_in
 from .find_sub_element import find_sub_element
+from .index_of_stored_element_in import index_of_stored_element_in
 from .navigate_to import navigate_to
 from .save_screenshot_to_file import save_screenshot_to_file
 from .send_key_to import send_enter_key_to
@@ -22,6 +23,7 @@ __all__ = [
     'find_elements',
     'find_stored_element_in',
     'find_sub_element',
+    'index_of_stored_element_in',
     'navigate_to',
     'save_screenshot_to_file',
     'send_enter_key_to',
