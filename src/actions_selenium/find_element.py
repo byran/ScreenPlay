@@ -1,9 +1,9 @@
 from screenplay import Action, Actor, log_message
 from abilities.browse_the_web import waiting_browser_for
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
+from ._find_base_action import find_base_action
 
-
-class find_element(Action):
+class find_element(find_base_action):
     def __init__(self, locator):
         super().__init__()
         self._locator = locator

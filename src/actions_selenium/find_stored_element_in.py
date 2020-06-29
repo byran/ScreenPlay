@@ -1,7 +1,8 @@
 from screenplay import Action, Actor, log_message
+from ._find_base_action import find_base_action
 
 
-class _find_stored_element_with_text(Action):
+class _find_stored_element_with_text(find_base_action):
     def __init__(self, sourceId: str, text: str):
         super().__init__()
         self._sourceId = sourceId
