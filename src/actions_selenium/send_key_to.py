@@ -8,6 +8,7 @@ from abilities.browse_the_web import browser_for
 
 class _send_key_to_element(Action):
     def __init__(self, locator, key: Keys, key_name: str):
+        super().__init__()
         self._locator = locator
         self._key = key
         self._key_name = key_name
@@ -20,6 +21,7 @@ class _send_key_to_element(Action):
 
 class _send_key_to_stored_element(Action):
     def __init__(self, id, key: Keys, key_name: str):
+        super().__init__()
         self._id = id
         self._key = key
         self._key_name = key_name

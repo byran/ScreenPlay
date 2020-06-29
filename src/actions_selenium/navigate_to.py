@@ -13,6 +13,7 @@ class navigate_to(Action):
     url - The url to navigate to
     """
     def __init__(self, url: str):
+        super().__init__()
         self._url = url
 
     @log_message('Navigate browser to \'{self._url}\'')

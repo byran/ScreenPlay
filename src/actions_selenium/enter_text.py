@@ -7,6 +7,7 @@ from abilities.browse_the_web import browser_for
 
 class _enter_text_into_element(Action):
     def __init__(self, text: str, locator):
+        super().__init__()
         self._text = text
         self._locator = locator
         self._displayText = text
@@ -23,6 +24,7 @@ class _enter_text_into_element(Action):
 
 class _enter_text_into_stored_element(Action):
     def __init__(self, text: str, id: str):
+        super().__init__()
         self._text = text
         self._id = id
         self._displayText = text
