@@ -109,13 +109,13 @@ if __name__ == "__main__":
 
         fileWriter.begin_table('metric', 'value')
         (average_complexity, max_complexity) = calculate_average_and_max_complexity(files)
-        fileWriter.add_table_row('average complexity', str(average_complexity))
+        fileWriter.add_table_row('average complexity', str(round(average_complexity, 2)))
         fileWriter.add_table_row('max complexity', str(max_complexity))
         (average_loc, max_loc, average_maintainability, min_maintainability) = calculate_summary_file_metrics(files)
-        fileWriter.add_table_row('average lines of code', str(average_loc))
+        fileWriter.add_table_row('average lines of code', str(round(average_loc, 2)))
         fileWriter.add_table_row('max lines of code', str(max_loc))
-        fileWriter.add_table_row('average maintainability', str(average_maintainability))
-        fileWriter.add_table_row('min maintainability', str(min_maintainability))
+        fileWriter.add_table_row('average maintainability', str(round(average_maintainability, 2)))
+        fileWriter.add_table_row('min maintainability', str(round(min_maintainability, 2)))
         fileWriter.end_table()
 
         fileWriter.write_heading_2('Individual file code metrics')
@@ -125,7 +125,7 @@ if __name__ == "__main__":
             file_metrics = files[file]
 
             fileWriter.write_lines(
-                'Maintainability: {v}'.format(v=file_metrics.maintainability),
+                'Maintainability: {v}'.format(v=round(file_metrics.maintainability, 2)),
                 'Lines of code: {v}'.format(v=file_metrics.lines_of_code)
             )
 
