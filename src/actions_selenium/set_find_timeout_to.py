@@ -7,7 +7,7 @@ class set_find_timeout_to(Action):
         self.timeout = timeout
         self.actions = []
 
-    def and_then(self, *actions):
+    def seconds_and_then(self, *actions):
         self.actions = actions
         return self
 
