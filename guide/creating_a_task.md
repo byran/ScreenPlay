@@ -74,7 +74,7 @@ the ScreenPlay framework when the task is run. It's passed the current
 using the ```Actor.attempts_to``` (or ```attempt_to```) method.
 
 The ```Action```s (and ```Task```s) that the ```Task``` runs and anything else
-that is required must to imported.
+that is required must be imported.
 
 ```python
 from screenplay import Task, Actor, log_message
