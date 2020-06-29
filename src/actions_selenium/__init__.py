@@ -10,6 +10,7 @@ from .index_of_stored_element_in import index_of_stored_element_in
 from .navigate_to import navigate_to
 from .save_screenshot_to_file import save_screenshot_to_file
 from .send_key_to import send_enter_key_to
+from .set_find_timeout_to import set_find_timeout_to
 from .text_of import text_of
 from .value_of import value_of
 
@@ -27,6 +28,7 @@ __all__ = [
     'navigate_to',
     'save_screenshot_to_file',
     'send_enter_key_to',
+    'set_find_timeout_to',
     'text_of',
     'value_of'
 ]

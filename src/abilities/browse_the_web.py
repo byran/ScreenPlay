@@ -10,9 +10,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class WaitingWebDriver:
-    def __init__(self, webdriver, ignored_exceptions=None):
+    def __init__(self, webdriver, time_out, ignored_exceptions=None):
         self._webdriver: WebDriver = webdriver
-        self._wait = WebDriverWait(webdriver, 10, ignored_exceptions=ignored_exceptions)
+        self._wait = WebDriverWait(webdriver, time_out, ignored_exceptions=ignored_exceptions)
 
     @property
     def browser(self) -> WebDriver:
@@ -35,6 +35,7 @@ class browse_the_web(Ability):
     def __init__(self, create_browser_function: type):
         self._create_browser_function = create_browser_function
         self._webdriver = None
+        self.wait_timeout = 10
 
     def clean_up(self):
         if self._webdriver is not None:
@@ -48,7 +49,7 @@ class browse_the_web(Ability):
         return self._webdriver
 
     def waiting_browser(self, ignored_exceptions=None) -> WaitingWebDriver:
-        return WaitingWebDriver(self.browser, ignored_exceptions)
+        return WaitingWebDriver(self.browser, self.wait_timeout, ignored_exceptions)
 
     @staticmethod
     def _create_Chrome_browser():
