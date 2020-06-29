@@ -41,19 +41,22 @@ class Log:
     def start_logging_actions(cls):
         cls._previous_levels.append(cls._current_level)
         cls._current_level = cls.action_log_level
-        _LogIndent.increase_indent()
+        if cls.should_log():
+            _LogIndent.increase_indent()
 
     @classmethod
     def start_logging_tasks(cls):
         cls._previous_levels.append(cls._current_level)
         cls._current_level = cls.task_log_level
-        _LogIndent.increase_indent()
+        if cls.should_log():
+            _LogIndent.increase_indent()
 
     @classmethod
     def end_logging_task_or_action(cls):
         if len(cls._previous_levels) > 0:
             cls._current_level = cls._previous_levels.pop()
-            _LogIndent.decrease_indent()
+            if cls.should_log():
+                _LogIndent.decrease_indent()
 
     @classmethod
     def should_log(cls):
