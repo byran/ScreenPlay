@@ -1,5 +1,5 @@
 from screenplay import Task, Actor, log_message
-from actions_selenium import enter_text, send_enter_key_to
+from actions_selenium import find_element, enter_text, send_enter_key_to
 from pages.google_homepage import google_homepage
 
 
@@ -11,6 +11,8 @@ class search_for(Task):
     @log_message('Enter \'{self._text}\' into google')
     def perform_as(self, actor: Actor):
         actor.attempts_to(
-            enter_text(self._text).into_element(google_homepage.search_textbox),
-            send_enter_key_to().element(google_homepage.search_textbox)
+            find_element(google_homepage.search_textbox).and_store_as('search_textbox')
+            .if_nothing_is_found_fail_with_message('Unable to find search textbox'),
+            enter_text(self._text).into_stored_element('search_textbox'),
+            send_enter_key_to().stored_element('search_textbox')
         )
