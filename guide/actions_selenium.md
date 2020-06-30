@@ -109,7 +109,7 @@ actor.attempts_to(
 
 Clicks on an element stored in the ```Actor```'s state identified by the id
 passed as the first argument to the method. The element will usually be stored
-in the actor's status using one of the ```action_selenium.find_*``` actions.
+in the actor's state using one of the ```action_selenium.find_*``` actions.
 
 
 ```python
