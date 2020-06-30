@@ -15,7 +15,7 @@
 
 ## Other ScreenPlay features
 
-* Using the Actors state to store information
+* Using the Actor's state to store information
 * Implementing abilitites
 
 ## Built in Abilities, Tasks, Actions, Matchers

@@ -15,6 +15,17 @@ class google_homepage:
 
 ### ```actions_selenium.navigate_to```
 
+Navigates the browser to the URL passed as the first argument to the
+constructor.
+
+```python
+from actions_selenium import navigate_to
+
+actor.attempts_to(
+    navigate_to('https://www.google.co.uk')
+)
+```
+
 ## Actions for saving screenshots
 
 ### ```actions_selenium.save_screenshot_to_file```
@@ -39,7 +50,7 @@ element = actor.attempts_to(
 
 #### ```.and_store_as(id)``` method
 
-Make the action store the element in the ```Actor```s state identified by the
+Make the action store the element in the ```Actor```'s state identified by the
 first argument to the method.
 
 ```python
@@ -51,7 +62,7 @@ actor.attempts_to(
 )
 ```
 
-#### ```if_nothing_is_found_fail_with_message(message)``` method
+#### ```.if_nothing_is_found_fail_with_message(message)``` method
 
 If the element specified by the locator could not be found, this method will
 make the test fail after the element could not be found with the message passed
@@ -71,9 +82,9 @@ actor.attempts_to(
 
 ### ```actions_selenium.find_elements```
 
-### ```actions_selenium.find_stored_element_in```
-
 ### ```actions_selenium.find_sub_element```
+
+### ```actions_selenium.find_stored_element_in```
 
 ## Actions for interacting with elements
 
@@ -96,9 +107,9 @@ actor.attempts_to(
 
 #### ```.stored_element(id)``` method
 
-Clicks on an element stored in the ```Actor```s state identified by the id
+Clicks on an element stored in the ```Actor```'s state identified by the id
 passed as the first argument to the method. The element will usually be stored
-in the actors status using one of the ```action_selenium.find_*``` actions.
+in the actor's status using one of the ```action_selenium.find_*``` actions.
 
 
 ```python
