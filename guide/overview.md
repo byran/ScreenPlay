@@ -37,7 +37,7 @@
 * actions_common.pause_for
 * actions_common.select_element_at_index
 
-actions_selenium
+[actions_selenium](actions_selenium.md)
 
 * actions_selenium.click_on
 * actions_selenium.click_on_sub_element
