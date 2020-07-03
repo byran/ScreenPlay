@@ -1,11 +1,25 @@
-# ```actions_common``` built in Actions
+# ```actions_common``` - Actions for checking the ```Actor```'s state and failing tests
 
-## Actions for accessing/checking ```Actor```'s state
+## actions_common.fail_with_message
 
-### actions_common.if_value_of
+The ```fail_with_message``` actions will cause the scenario/test to fail when
+the actions is run. It's takes a single constructor parameter, the failure
+message.
 
-The ```if_value_of``` action will run a list of ```Task```s and/or
-```Action```s if the value of an element of the ```Actor```'s state matches the
+```python
+from actions_common import fail_with_message
+
+@step('...')
+def step_impl(context):
+    context.they.attempts_to(
+        fail_with_message('Failure message')
+    )
+```
+
+## actions_common.if_value_of
+
+The ```if_value_of``` action will run a list of ```Action```s and/or
+```Task```s if the value of an element of the ```Actor```'s state matches the
 specified value(s).
 
 *** TODO: Add more detail here ***
@@ -22,27 +36,13 @@ def step_impl(context):
     )
 ```
 
-### actions_common.select_element_at_index
+# ```actions_common``` - Actions for accessing the ```Actor```'s state
 
-## Actions for slowing and failing tests
+## actions_common.select_element_at_index
 
-### actions_common.fail_with_message
+# ```actions_common``` - Actions for slowing tests
 
-The ```fail_with_message``` actions will cause the scenario/test to fail when
-the actions is run. It's takes a single constructor parameter, the failure
-message.
-
-```python
-from actions_common import fail_with_message
-
-@step('...')
-def step_impl(context):
-    context.they.attempts_to(
-        fail_with_message('Failure message')
-    )
-```
-
-### actions_common.pause_for
+## actions_common.pause_for
 
 Pauses the execution of the test/scenario for the specified amount of time. The
 action takes one constructor parameter, the time (in seconds by default).
