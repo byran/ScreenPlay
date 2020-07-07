@@ -12,7 +12,7 @@ class _value_of_stored_element(Action):
         self._stripWhitespace = True
         return self
 
-    @log_message('Get value of stored element \'{self._id}\'')
+    @log_message('Get value of stored element "{self._id}"')
     def perform_as(self, actor: Actor):
         element: WebElement = actor.state[self._id].value
         value = element.get_attribute('value')

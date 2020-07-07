@@ -14,7 +14,7 @@ class _send_key_to_element(Action):
         self._key = key
         self._key_name = key_name
 
-    @log_message('Send key \'{self._key_name}\' to element "{self._locator}"')
+    @log_message('Send key "{self._key_name}" to element "{self._locator}"')
     def perform_as(self, actor: Actor):
         element: WebElement = browser_for(actor).find_element(*self._locator)
         element.send_keys(self._key)
@@ -27,7 +27,7 @@ class _send_key_to_stored_element(Action):
         self._key = key
         self._key_name = key_name
 
-    @log_message('Send key \'{self._key_name}\' to element "{self._id}"')
+    @log_message('Send key "{self._key_name}" to element "{self._id}"')
     def perform_as(self, actor: Actor):
         actor.state[self._id].value.send_keys(self._key)
 

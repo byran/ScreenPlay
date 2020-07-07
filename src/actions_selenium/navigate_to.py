@@ -16,6 +16,6 @@ class navigate_to(Action):
         super().__init__()
         self._url = url
 
-    @log_message('Navigate browser to \'{self._url}\'')
+    @log_message('Navigate browser to "{self._url}"')
     def perform_as(self, actor: Actor):
         browser_for(actor).get(self._url)

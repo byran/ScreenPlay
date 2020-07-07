@@ -48,7 +48,7 @@ def test_hiding_the_text_from_the_log_when_entering_text_into_a_stored_element(u
     )
 
     assert len(log_text) == 1, "Only expected 1 log message, actually {n} message(s)".format(n=len(log_text))
-    assert log_text[0].strip() == 'Enter text \'**hidden**\' into element "textbox"'
+    assert log_text[0].strip() == 'Enter text "**hidden**" into element "textbox"'
 
 
 def test_hiding_the_text_from_the_log_when_entering_text_into_a_located_element(user):
@@ -64,4 +64,4 @@ def test_hiding_the_text_from_the_log_when_entering_text_into_a_located_element(
     )
 
     assert len(log_text) == 1, "Only expected 1 log message, actually {n} message(s)".format(n=len(log_text))
-    assert log_text[0].strip() == 'Enter text \'**hidden**\' into element "(\'id\', \'third_text\')"'
+    assert log_text[0].strip() == 'Enter text "**hidden**" into element "(\'id\', \'third_text\')"'

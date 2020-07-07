@@ -16,7 +16,7 @@ class _text_of_stored_element(Action):
         self._destination_id = id
         return self
 
-    @log_message('Get text of stored element \'{self._source_id}\'')
+    @log_message('Get text of stored element "{self._source_id}"')
     def perform_as(self, actor: Actor):
         text = actor.state[self._source_id].value.text
 

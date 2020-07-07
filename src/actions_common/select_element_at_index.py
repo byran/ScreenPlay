@@ -12,7 +12,7 @@ class _select_element_at_index_from_stored_list(Action):
         self._destinationId = id
         return self
 
-    @log_message('Selecting element {self._index} of \'{self._sourceId}\'')
+    @log_message('Selecting element {self._index} of "{self._sourceId}"')
     def perform_as(self, actor: Actor):
         items = actor.state[self._sourceId].value
         assert len(items) > self._index, "'{id}' does not have enough elements to access element {index}" \

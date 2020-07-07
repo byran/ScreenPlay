@@ -193,7 +193,7 @@ class search_for(Task):
         super().__init__()
         self._text = text
 
-    @log_message('Enter \'{self._text}\' into google')
+    @log_message('Enter "{self._text}" into google')
     def perform_as(self, actor: Actor):
         actor.attempts_to(
             enter_text(self._text).into_element(google_homepage.search_textbox),
