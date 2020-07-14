@@ -14,6 +14,17 @@ class CollectedStep:
         self.error_message = None
         self.status = 'not run'
 
+    def __init__(self, name: str, step_type: str, text: List[str], error_message: List[str], status: str):
+        self.name = name
+        self.step_type = step_type
+        self.text: List[str] = text
+        self.error_message = error_message
+        self.status = status
+
+    @classmethod
+    def from_json(cls, data):
+        return cls(**data)
+
 
 class CollectedScenario:
     def __init__(self, name: str, tags: List[str]):
@@ -21,6 +32,18 @@ class CollectedScenario:
         self.tags: List[str] = tags
         self.status = 'not run'
         self.steps: List[CollectedStep] = []
+
+    def __init__(self, name: str, tags: List[str], status: str, steps: List[CollectedStep]):
+        self.name = name
+        self.tags: List[str] = tags
+        self.status = status
+        self.steps: List[CollectedStep] = steps
+
+    @classmethod
+    def from_json(cls, data):
+        steps = list(map(CollectedStep.from_json, data['steps']))
+        data.pop('steps', None)
+        return cls(steps=steps, **data)
 
 
 class CollectedFeature:
@@ -35,6 +58,22 @@ class CollectedFeature:
 
     def finished(self):
         self.run_time = time.time() - self.start_time
+
+    def __init__(self, file_name: str, name: str, description: List[str],
+                 tags: List[str], start_time: float, run_time: float, scenarios: List[CollectedScenario]):
+        self.file_name = file_name
+        self.name = name
+        self.description: List[str] = description
+        self.tags: List[str] = tags
+        self.start_time = start_time
+        self.run_time = run_time
+        self.scenarios: List[CollectedScenario] = scenarios
+
+    @classmethod
+    def from_json(cls, data):
+        scenarios = list(map(CollectedScenario.from_json, data['scenarios']))
+        data.pop('scenarios', None)
+        return cls(scenarios=scenarios, **data)
 
 
 class CollectingFormatter(Formatter):
