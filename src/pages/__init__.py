@@ -1,7 +1,7 @@
-from .google_homepage import google_homepage
-from .google_search_results import google_search_results
+from .duckduckgo_homepage import duckduckgo_homepage
+from .duckduckgo_search_results import duckduckgo_search_results
 
 __all__ = [
-    'google_homepage',  # google_homepage.py
-    'google_search_results'  # google_search_results.py
+    'duckduckgo_homepage',  # duckduckgo_homepage.py
+    'duckduckgo_search_results'  # duckduckgo_search_results.py
 ]

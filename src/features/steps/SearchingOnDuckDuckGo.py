@@ -2,18 +2,18 @@ from behave import runner, step
 from screenplay.matchers.contains import contains
 from screenplay.condition import see_that
 from tasks.search_for import search_for
-from tasks.open_google import open_google
+from tasks.open_duckduckgo import open_duckduckgo
 from questions.the_search_result_titles import the_search_result_titles
 from tasks_selenium import save_screenshot
 
 # use_step_matcher("re")
 
 
-@step(u'{actor} has opened Google')
+@step(u'{actor} has opened DuckDuckGo')
 def step_impl(context: runner.Context, actor: str):
     context.actors.switch_active(actor)
     context.they.attempt_to(
-        open_google()
+        open_duckduckgo()
     )
 
 
