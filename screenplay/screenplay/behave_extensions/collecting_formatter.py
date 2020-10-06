@@ -7,7 +7,8 @@ import time
 
 
 class CollectedStep:
-    def __init__(self, name: str, step_type: str, text: List[str] = [], error_message: List[str] = None, status: str = 'not run'):
+    def __init__(self, name: str, step_type: str, text: List[str] = [],
+                 error_message: List[str] = None, status: str = 'not run'):
         self.name = name
         self.step_type = step_type
         self.text: List[str] = text
@@ -35,7 +36,8 @@ class CollectedScenario:
 
 class CollectedFeature:
     def __init__(self, file_name: str, name: str, description: List[str],
-                 tags: List[str], start_time: float = time.time(), run_time: float = 0, scenarios: List[CollectedScenario] = []):
+                 tags: List[str], start_time: float = time.time(),
+                 run_time: float = 0, scenarios: List[CollectedScenario] = []):
         self.file_name = file_name
         self.name = name
         self.description: List[str] = description
