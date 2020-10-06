@@ -121,7 +121,7 @@ if __name__ == "__main__":
         fileWriter.write_heading_2('Individual file code metrics')
 
         for file in files:
-            fileWriter.write_heading_3(file)
+            fileWriter.write_heading_3(file.replace('\\', '/'))
             file_metrics = files[file]
 
             fileWriter.write_lines(
