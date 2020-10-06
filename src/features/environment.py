@@ -13,8 +13,8 @@ def find_element_failure_actions():
 
 
 def before_all(context: runner.Context):
-    repositoryRoot = pathlib.Path(__file__).parent.parent.parent.absolute()
-    save_screenshot.path = os.path.join(repositoryRoot, 'docs', 'test_results')
+    relativePath = context.config.userdata['save_screenshot.relative_path']
+    save_screenshot.path = os.path.normpath(os.path.join(pathlib.Path(__file__).parent, relativePath))
     find_base_action.create_fail_actions_callback = find_element_failure_actions
 
 
