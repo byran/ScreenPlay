@@ -15,6 +15,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import xml.etree.ElementTree as ET
 
 # -- Project information -----------------------------------------------------
 
@@ -32,7 +33,8 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_rtd_theme'
+    'sphinx_rtd_theme',
+    'rstjinja'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -62,4 +64,17 @@ html_css_files = [
 
 html_theme_options = {
     'collapse_navigation': False
+}
+
+
+def hassubelement(xmlelement, name):
+    for element in xmlelement:
+        if element.tag == name:
+            return True
+    return False
+
+
+html_context = {
+    'unittests': ET.parse('unittest_results/unittest_results.xml').getroot(),
+    'hassubelement': hassubelement
 }

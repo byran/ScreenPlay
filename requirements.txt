@@ -9,3 +9,4 @@ sphinx-rtd-theme==0.4.3
 coverage==5.1
 radon>=4.1.0
 -e ./screenplay
+-e ./rstjinja
