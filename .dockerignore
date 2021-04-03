@@ -1,5 +1,11 @@
+/.git
 /.github
 /.pytest_cache
 /.venv
 /.vscode
+
 /*.bat
+
+__pycache__/
+
+*.egg-info/
