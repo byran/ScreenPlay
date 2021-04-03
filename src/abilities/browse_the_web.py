@@ -61,8 +61,20 @@ class browse_the_web(Ability):
         return Chrome(options=chrome_options)
 
     @staticmethod
+    def _create_remote_Chrome_browser():
+        chrome_options = ChromeOptions()
+        return WebDriver(
+            command_executor='http://hub:4444/wd/hub',
+            desired_capabilities=chrome_options.to_capabilities()
+        )
+
+    @staticmethod
     def using_Chrome():
         return browse_the_web(browse_the_web._create_Chrome_browser)
+
+    @staticmethod
+    def using_remote_Chrome():
+        return browse_the_web(browse_the_web._create_remote_Chrome_browser)
 
 
 def browser_for(actor: Actor) -> WebDriver:
