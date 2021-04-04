@@ -1,6 +1,6 @@
 from screenplay import Action, Actor
 from actions_common import fail_with_message
-from _find_base_action import find_base_action
+from ._find_base_action import find_base_action
 from selenium.common.exceptions import NoSuchElementException
 
 
