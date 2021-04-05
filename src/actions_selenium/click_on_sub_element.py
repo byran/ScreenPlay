@@ -1,9 +1,10 @@
-from screenplay import Action, Actor, log_message
+from screenplay import Actor, log_message
 from abilities.browse_the_web import waiting_browser_for
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
+from ._handle_no_such_element_base_action import handle_no_such_element_base_action
 
 
-class _click_on_sub_element_of_WebElement(Action):
+class _click_on_sub_element_of_WebElement(handle_no_such_element_base_action):
     def __init__(self, locator, parentElement):
         super().__init__()
         self._locator = locator
@@ -18,7 +19,7 @@ class _click_on_sub_element_of_WebElement(Action):
         waiting_browser_for(actor, (StaleElementReferenceException, NoSuchElementException)).until(click_on_element)
 
 
-class _click_on_sub_element_of_stored_element(Action):
+class _click_on_sub_element_of_stored_element(handle_no_such_element_base_action):
     def __init__(self, locator, id: str):
         super().__init__()
         self._locator = locator

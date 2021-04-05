@@ -3,9 +3,10 @@
 from screenplay import Action, Actor, log_message
 from selenium.webdriver.remote.webelement import WebElement
 from abilities.browse_the_web import browser_for
+from ._handle_no_such_element_base_action import handle_no_such_element_base_action
 
 
-class _enter_text_into_element(Action):
+class _enter_text_into_element(handle_no_such_element_base_action):
     def __init__(self, text: str, locator):
         super().__init__()
         self._text = text

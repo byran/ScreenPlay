@@ -5,9 +5,10 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from abilities.browse_the_web import browser_for
+from ._handle_no_such_element_base_action import handle_no_such_element_base_action
 
 
-class _send_key_to_element(Action):
+class _send_key_to_element(handle_no_such_element_base_action):
     def __init__(self, locator, key: Keys, key_name: str):
         super().__init__()
         self._locator = locator
@@ -55,7 +56,7 @@ class send_enter_key_to:
         return _send_key_to_stored_element(id, Keys.ENTER, 'Enter')
 
 
-class _send_CTRL_plus_key_to_element(Action):
+class _send_CTRL_plus_key_to_element(handle_no_such_element_base_action):
     def __init__(self, locator, key, key_name: str):
         super().__init__()
         self._locator = locator
