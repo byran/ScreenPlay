@@ -74,7 +74,7 @@ def hassubelement(xmlelement, name):
     return False
 
 
-context = {
+html_context = {
     'unittests': ET.parse('unittest_results/unittest_results.xml').getroot(),
     'hassubelement': hassubelement
 }
