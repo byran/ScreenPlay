@@ -1,5 +1,5 @@
 from screenplay import Task, Actor, log_message
-from actions_selenium import find_element, enter_text, send_enter_key_to
+from screenplay_selenium.actions import find_element, enter_text, send_enter_key_to
 from pages.duckduckgo_homepage import duckduckgo_homepage
 
 

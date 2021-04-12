@@ -22,11 +22,11 @@
 
 ### Abiltiies
 
-* abilities.browse_the_web
+* screenplay_selenium.abilities.browse_the_web
 
 ### Tasks
 
-* tasks_selenium.save_screenshot
+* screenplay_selenium.tasks.save_screenshot
 
 ### Actions
 
@@ -39,35 +39,35 @@
 * screenplay.actions.pause_for
 * screenplay.actions.select_element_at_index
 
-#### ```actions_selenium```
+#### ```screenplay_selenium.actions```
 
-[Actions for navigation](actions_selenium_navigation.md)
+[Actions for navigation](screenplay_selenium.actions_navigation.md)
 
-* actions_selenium.navigate_to
+* screenplay_selenium.actions.navigate_to
 
-[Actions for saving screenshots](actions_selenium_save_screenshots.md)
+[Actions for saving screenshots](screenplay_selenium.actions_save_screenshots.md)
 
-* actions_selenium.save_screenshot_to_file
+* screenplay_selenium.actions.save_screenshot_to_file
 
-[Actions for finding elements](actions_selenium_find.md)
+[Actions for finding elements](screenplay_selenium.actions_find.md)
 
-* actions_selenium.find_element
-* actions_selenium.find_element_with_locator_and_text
-* actions_selenium.find_elements
-* actions_selenium.find_stored_element_in
-* actions_selenium.find_sub_element
+* screenplay_selenium.actions.find_element
+* screenplay_selenium.actions.find_element_with_locator_and_text
+* screenplay_selenium.actions.find_elements
+* screenplay_selenium.actions.find_stored_element_in
+* screenplay_selenium.actions.find_sub_element
 
-[Actions for interacting with elements](actions_selenium_interacting.md)
+[Actions for interacting with elements](screenplay_selenium.actions_interacting.md)
 
-* actions_selenium.click_on
-* actions_selenium.click_on_sub_element
-* actions_selenium.enter_text
-* actions_selenium.send_key_to
+* screenplay_selenium.actions.click_on
+* screenplay_selenium.actions.click_on_sub_element
+* screenplay_selenium.actions.enter_text
+* screenplay_selenium.actions.send_key_to
 
-[Actions for querying information](actions_selenium_information.md)
+[Actions for querying information](screenplay_selenium.actions_information.md)
 
-* actions_selenium.text_of
-* actions_selenium.value_of
+* screenplay_selenium.actions.text_of
+* screenplay_selenium.actions.value_of
 
 ### Matchers
 
@@ -77,7 +77,7 @@ screenplay.matchers
 * screenplay.matchers.equals
 * screenplay.matchers.is_an_empty_list
 
-matchers_selenium
+screenplay_selenium.matchers
 
-* matchers_selenium.is_displayed
-* matchers_selenium.is_not_present
+* screenplay_selenium.matchers.is_displayed
+* screenplay_selenium.matchers.is_not_present

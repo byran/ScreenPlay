@@ -78,7 +78,7 @@ that is required must be imported.
 
 ```python
 from screenplay import Task, Actor, log_message
-from actions_selenium import enter_text, send_enter_key_to
+from screenplay_selenium.actions import enter_text, send_enter_key_to
 from pages.google_homepage import google_homepage
 
 
@@ -184,7 +184,7 @@ def step_impl(context):
 
 ``` python
 from screenplay import Task, Actor, log_message
-from actions_selenium import enter_text, send_enter_key_to
+from screenplay_selenium.actions import enter_text, send_enter_key_to
 from pages.google_homepage import google_homepage
 
 

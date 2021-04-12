@@ -1,6 +1,6 @@
 # Creating a Page
 
-Pages classes are used with the ```actions_selenium``` built in ```Action```s.
+Pages classes are used with the ```screenplay_selenium.actions``` built in ```Action```s.
 If you're not creating scenarios for testing a website then you'll need to
 create a similar class for your domain.
 

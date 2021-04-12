@@ -1,5 +1,5 @@
 from screenplay import Task, Actor, log_message
-from actions_selenium import navigate_to
+from screenplay_selenium.actions import navigate_to
 
 
 class open_duckduckgo(Task):

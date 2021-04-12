@@ -4,7 +4,7 @@ from screenplay.condition import see_that
 from tasks.search_for import search_for
 from tasks.open_duckduckgo import open_duckduckgo
 from questions.the_search_result_titles import the_search_result_titles
-from tasks_selenium import save_screenshot
+from screenplay_selenium.tasks import save_screenshot
 
 # use_step_matcher("re")
 

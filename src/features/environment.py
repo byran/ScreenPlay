@@ -1,9 +1,9 @@
 from behave import runner, model
 from screenplay.behave_extensions import add_screenplay_objects_to
 from screenplay.log import Log
-from abilities.browse_the_web import browse_the_web
-from tasks_selenium import save_screenshot
-from actions_selenium._find_base_action import find_base_action
+from screenplay_selenium.abilities.browse_the_web import browse_the_web
+from screenplay_selenium.tasks import save_screenshot
+from screenplay_selenium.actions._find_base_action import find_base_action
 import os
 import pathlib
 

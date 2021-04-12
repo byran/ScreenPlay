@@ -1,5 +1,5 @@
 from screenplay import Actor, Question
-from abilities.browse_the_web import browser_for
+from screenplay_selenium.abilities.browse_the_web import browser_for
 from pages.duckduckgo_search_results import duckduckgo_search_results
 
 
