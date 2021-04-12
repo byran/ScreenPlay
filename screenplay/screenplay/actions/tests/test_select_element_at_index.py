@@ -1,6 +1,6 @@
 import pytest
 from screenplay import Actor
-from actions_common import select_element_at_index
+from screenplay.actions import select_element_at_index
 
 
 def test_selecting_an_element_from_a_stored_list_returns_the_value_and_stores_it_in_the_actors_state():

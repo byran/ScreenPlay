@@ -1,5 +1,5 @@
 from screenplay import Actor, Action
-from actions_common import if_value_of
+from screenplay.actions import if_value_of
 
 
 class record_if_run(Action):

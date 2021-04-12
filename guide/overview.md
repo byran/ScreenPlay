@@ -30,14 +30,14 @@
 
 ### Actions
 
-#### ```actions_common```
+#### ```screenplay.actions```
 
-[actions_common](actions_common.md)
+[screenplay.actions](screenplay.actions.md)
 
-* actions_common.fail_with_message
-* actions_common.if_value_of
-* actions_common.pause_for
-* actions_common.select_element_at_index
+* screenplay.actions.fail_with_message
+* screenplay.actions.if_value_of
+* screenplay.actions.pause_for
+* screenplay.actions.select_element_at_index
 
 #### ```actions_selenium```
 

@@ -1,5 +1,5 @@
 from screenplay import Action, Actor
-from actions_common import fail_with_message
+from screenplay.actions import fail_with_message
 
 
 class _if_nothing_is_found_fail_with_message(Action):

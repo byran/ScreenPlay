@@ -1,5 +1,5 @@
 # flake8: noqa
-import actions_common
+import screenplay.actions
 import actions_selenium
 import matchers_selenium
 import tasks_selenium

@@ -1,13 +1,13 @@
-# ```actions_common``` - Actions for checking the ```Actor```'s state and failing tests
+# ```screenplay.actions``` - Actions for checking the ```Actor```'s state and failing tests
 
-## actions_common.fail_with_message
+## screenplay.actions.fail_with_message
 
 The ```fail_with_message``` actions will cause the scenario/test to fail when
 the actions is run. It's takes a single constructor parameter, the failure
 message.
 
 ```python
-from actions_common import fail_with_message
+from screenplay.actions import fail_with_message
 
 @step('...')
 def step_impl(context):
@@ -16,7 +16,7 @@ def step_impl(context):
     )
 ```
 
-## actions_common.if_value_of
+## screenplay.actions.if_value_of
 
 The ```if_value_of``` action will run a list of ```Action```s and/or
 ```Task```s if the value of an element of the ```Actor```'s state matches the
@@ -25,7 +25,7 @@ specified value(s).
 *** TODO: Add more detail here ***
 
 ```python
-from actions_common import if_value_of, fail_with_message
+from screenplay.actions import if_value_of, fail_with_message
 
 @step('...')
 def step_impl(context):
@@ -36,13 +36,13 @@ def step_impl(context):
     )
 ```
 
-# ```actions_common``` - Actions for accessing the ```Actor```'s state
+# ```screenplay.actions``` - Actions for accessing the ```Actor```'s state
 
-## actions_common.select_element_at_index
+## screenplay.actions.select_element_at_index
 
-# ```actions_common``` - Actions for slowing tests
+# ```screenplay.actions``` - Actions for slowing tests
 
-## actions_common.pause_for
+## screenplay.actions.pause_for
 
 Pauses the execution of the test/scenario for the specified amount of time. The
 action takes one constructor parameter, the time (in seconds by default).
@@ -55,7 +55,7 @@ The ```pause_for``` action has two methods that modify it's behaviour:
   seconds.
 
 ```python
-from actions_common import pause_for
+from screenplay.actions import pause_for
 
 @step('...')
 def step_impl(context):
