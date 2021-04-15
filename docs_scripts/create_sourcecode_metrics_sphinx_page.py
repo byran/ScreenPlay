@@ -24,7 +24,7 @@ if __name__ == "__main__":
         "raw": common
     }
 
-    with open('metrics_template.rst') as file:
+    with open('metrics.template') as file:
         template = file.read()
 
     with open(sys.argv[1], 'wt') as file:
