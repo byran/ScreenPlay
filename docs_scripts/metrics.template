@@ -72,7 +72,7 @@ Individual file code metrics
 | Maintainability: {{ mi[file].mi|round(2) }}
 | Rank: {{ mi[file].rank }}
 
-{%- if cc[file]|length > 0 %}
+{%- if non_class_complexity(cc[file]) > 0 %}
 
 .. list-table::
     :widths: auto

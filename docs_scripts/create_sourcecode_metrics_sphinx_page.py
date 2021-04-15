@@ -4,6 +4,14 @@ import json
 from jinja2 import Template
 
 
+def non_class_complexity(file):
+    count = 0
+    for item in file:
+        if item['type'] != "class":
+            count = count + 1
+    return count
+
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print('Invalid arguments:\n{cmd} <output file>\n'.format(cmd=sys.argv[0]))
@@ -21,7 +29,8 @@ if __name__ == "__main__":
     context = {
         "mi": maintainability,
         "cc": complexity,
-        "raw": common
+        "raw": common,
+        "non_class_complexity": non_class_complexity
     }
 
     with open('metrics.template') as file:
