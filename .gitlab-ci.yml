@@ -1,5 +1,6 @@
 build-lint-unittest:
   script:
+    - ./create_virtual_environment.sh
     - ./install_requirements.sh
     - ./lint.sh
     - ./run_unittests_with_coverage.sh
