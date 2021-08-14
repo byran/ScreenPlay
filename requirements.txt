@@ -10,4 +10,3 @@ coverage==5.1
 radon>=4.1.0
 -e ./screenplay
 -e ./screenplay_selenium
--e ./rstjinja

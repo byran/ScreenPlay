@@ -15,5 +15,8 @@
 	"python.testing.pytestArgs": [
 		"."
 	],
-	"restructuredtext.confPath": "${workspaceFolder}/docs"
+	"restructuredtext.confPath": "${workspaceFolder}/docs",
+	"python.analysis.extraPaths": [
+		"./src"
+	]
 }
