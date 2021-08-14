@@ -12,14 +12,6 @@ Welcome to Python-ScreenPlay's documentation!
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Test Results:
-   :glob:
-
-   test_results/*
-
-
-.. toctree::
    :maxdepth: 1
    :caption: Unit Test Results:
    :glob:

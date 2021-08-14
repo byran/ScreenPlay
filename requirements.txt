@@ -1,5 +1,4 @@
 behave==1.2.6
-selenium>=3.141.0
 pylint>=2.4.4
 flake8>=3.7.9
 flake8-polyfill>=1.0.2
@@ -8,4 +7,4 @@ Sphinx==3.0.4
 sphinx-rtd-theme==0.4.3
 coverage==5.1
 radon>=4.1.0
--e ./screenplay
+-e ../SphinxJinja2

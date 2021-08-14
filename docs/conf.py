@@ -34,7 +34,7 @@ release = '0.0.1'
 # ones.
 extensions = [
     'sphinx_rtd_theme',
-    'rstjinja'
+    'sphinxjinja2'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
