@@ -8,6 +8,12 @@ setup(
     author='Byran Wills-Heath',
     author_email='byran@adgico.co.uk',
     license='MIT',
-    packages=['screenplay'],
+    packages=[
+        'screenplay',
+        'screenplay.actions',
+        'screenplay.behave_extensions',
+        'screenplay.matchers',
+        'screenplay.threading'
+    ],
     zip_safe=False
 )
