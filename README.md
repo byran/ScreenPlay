@@ -1,3 +1,5 @@
+![](../../workflows/Run%20tests/badge.svg)
+
 # Screen Play Pattern for Python
 
 ![Class diagram](class_diagram.png)
