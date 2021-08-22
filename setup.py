@@ -11,7 +11,6 @@ setup(
     packages=[
         'screenplay',
         'screenplay.actions',
-        'screenplay.behave_extensions',
         'screenplay.matchers',
         'screenplay.threading'
     ],
