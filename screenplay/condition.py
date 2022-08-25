@@ -1,11 +1,12 @@
 from .question import Question
 from .matcher import Matcher
+from .matchers.is_boolean import is_true
 
 
 class Condition:
-    def __init__(self, question: Question, expected: Matcher):
+    def __init__(self, question: Question, expected: Matcher = None):
         self.question = question
-        self.expected = expected
+        self.expected = expected if (expected is not None) else is_true()
         self._successActions = []
         self._failureActions = []
         self._alwaysActions = []

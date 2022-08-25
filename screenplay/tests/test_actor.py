@@ -108,6 +108,23 @@ def test_An_Actor_will_assert_if_any_of_the_checked_conditions_are_all_False():
         )
 
 
+def test_An_Actor_will_pass_questions_that_return_True_without_a_matcher():
+    david = Actor.named('David')
+
+    david.should(
+        see_that(StubQuestion(True))
+    )
+
+
+def test_An_Actor_will_fail_questions_that_return_False_without_a_matcher():
+    david = Actor.named('David')
+
+    with pytest.raises(AssertionError):
+        david.should(
+            see_that(StubQuestion(False))
+        )
+
+
 def test_An_Actors_state_can_be_updated_with_a_using_task():
     frank = Actor.named('Frank')
 
