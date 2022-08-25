@@ -1,10 +1,12 @@
+from typing import Union
+from types import FunctionType
 from .question import Question
 from .matcher import Matcher
 from .matchers.is_boolean import is_true
 
 
 class Condition:
-    def __init__(self, question: Question, expected: Matcher = None):
+    def __init__(self, question: Union[Question, FunctionType], expected: Matcher = None):
         self.question = question
         self.expected = expected if (expected is not None) else is_true()
         self._successActions = []
@@ -31,7 +33,7 @@ class Condition:
 
     def check_as(self, actor):
         try:
-            assert self.expected.matches(self.question.answered_by(actor)), self.expected.fail_message
+            assert self.expected.matches(self.question(actor)), self.expected.fail_message
             self._run_actions_as(actor, self._successActions)
         except Exception as exception:
             self._run_actions_as(actor, self._failureActions)

@@ -125,6 +125,17 @@ def test_An_Actor_will_fail_questions_that_return_False_without_a_matcher():
         )
 
 
+def test_An_Actor_can_check_a_function_question():
+    david = Actor.named('David')
+
+    def always_pass(actor: Actor):
+        return True
+
+    david.should(
+        see_that(always_pass)
+    )
+
+
 def test_An_Actors_state_can_be_updated_with_a_using_task():
     frank = Actor.named('Frank')
 
