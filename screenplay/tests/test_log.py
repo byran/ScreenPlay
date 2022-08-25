@@ -2,7 +2,7 @@ from screenplay import Actor, Task, Action, log_message, action_log_message
 from screenplay.log import Log, _LogIndent
 from .stub_function_task import stub_function_task
 from .stub_function_action import stub_function_action
-from .fixture_log_capture import log_capture
+from .fixture_log_capture import log_capture # noqa
 
 
 class failing_task(Task):
@@ -125,7 +125,7 @@ def test_The_log_indent_is_increased_for_a_function_Action_when_logging_to_actio
     assert ((action_indent - original_indent) == 4), 'The indent was not set for a function action'
 
 
-def test_The_log_indent_is_increased_for_a_function_Action_when_logging_to_actions():
+def test_The_log_indent_is_increased_for_a_function_Action_when_logging_to_tasks():
     user = Actor('user')
 
     Log.to_tasks()
