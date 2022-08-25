@@ -1,5 +1,8 @@
 from screenplay import Actor, Task, Action, log_message, action_log_message
 from screenplay.log import Log, _LogIndent
+from .stub_function_task import stub_function_task
+from .stub_function_action import stub_function_action
+from .fixture_log_capture import log_capture
 
 
 class failing_task(Task):
@@ -156,3 +159,56 @@ def test_The_log_indent_is_increased_for_a_function_Action_when_logging_to_actio
 
     assert ((task_indent - original_indent) == 2), 'The indent was not set for a function task'
     assert ((action_indent - original_indent) == 2), 'The indent was increased for a function action when logging to tasks'
+
+
+def test_Task_messages_are_output_by_the_log(log_capture):
+    Log.to_tasks()
+
+    bob = Actor.named('Bob')
+    bob.attempts_to(
+        stub_function_task('Do something')
+    )
+
+    assert len(log_capture) == 1
+    assert log_capture[0][0] == '    '
+    assert log_capture[0][1] == 'Do something'
+
+
+def test_Action_messages_are_output_by_the_log(log_capture):
+
+    @log_message('function task')
+    def task(actor: Actor):
+        actor.attempts_to(
+            stub_function_action('Do something fine grain')
+        )
+
+    Log.to_actions()
+
+    bob = Actor.named('Bob')
+    bob.attempts_to(
+        task
+    )
+
+    assert len(log_capture) == 2
+    assert log_capture[1][0] == '      '
+    assert log_capture[1][1] == 'Do something fine grain'
+
+
+def test_Action_messages_are_not_output_by_the_log_when_logging_to_tasks(log_capture):
+
+    @log_message('function task')
+    def task(actor: Actor):
+        actor.attempts_to(
+            stub_function_action('Do something fine grain')
+        )
+
+    Log.to_tasks()
+
+    bob = Actor.named('Bob')
+    bob.attempts_to(
+        task
+    )
+
+    assert len(log_capture) == 1
+    assert log_capture[0][0] == '    '
+    assert log_capture[0][1] == 'function task'
