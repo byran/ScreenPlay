@@ -39,7 +39,7 @@ class Actor:
 
     @staticmethod
     def _set_log_type_before_task_or_action(task_or_action: TaskOrAction):
-        if isinstance(task_or_action, Action):
+        if isinstance(task_or_action, Action) or hasattr(task_or_action, 'is_screenplay_action'):
             Log.start_logging_actions()
         else:
             Log.start_logging_tasks()

@@ -73,3 +73,16 @@ def log_message(message: str):
             return value
         return wrapper_log_message
     return decorator_log_message
+
+
+def action_log_message(message: str):
+    def decorator_log_message(func):
+        @functools.wraps(func)
+        def wrapper_log_message(*args, **kwargs):
+            if Log.should_log():
+                Log.write_line(_LogIndent.indent(), message.format(self=args[0]), sep='')
+            value = func(*args, **kwargs)
+            return value
+        wrapper_log_message.is_screenplay_action = True
+        return wrapper_log_message
+    return decorator_log_message
