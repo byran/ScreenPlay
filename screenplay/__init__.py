@@ -8,6 +8,7 @@ from .matcher import Matcher
 from .task import Task
 from .log import log_message, action_log_message
 from .using import using
+from .retry_until import retry_until
 
 __all__ = [
     'Ability',
@@ -20,4 +21,5 @@ __all__ = [
     'Task',
     'log_message',
     'action_log_message',
-    'using']
+    'using',
+    'retry_until']
