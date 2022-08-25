@@ -70,6 +70,25 @@ def test_An_Actor_can_perform_Tasks():
     assert task2.called, "Task 2 not run"
 
 
+def test_An_Actor_can_perform_Tasks_specified_as_a_function():
+    claire = Actor.named('Claire')
+
+    actual: int = 0
+
+    def FunctionTask(value: int):
+        def Task(actor):
+            nonlocal actual
+            actual = value
+        Task.is_action = True
+        return Task
+
+    claire.attempts_to(
+        FunctionTask(10)
+    )
+
+    assert actual == 10, "Function Action was not called"
+
+
 def test_An_Actor_can_check_conditions_and_does_not_assert_if_the_conditions_are_all_True():
     david = Actor.named('David')
 

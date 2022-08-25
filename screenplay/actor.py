@@ -49,7 +49,7 @@ class Actor:
         for task_or_action in tasks_or_actions:
             Actor._set_log_type_before_task_or_action(task_or_action)
             try:
-                result = task_or_action.perform_as(self)
+                result = task_or_action(self)
             finally:
                 Log.end_logging_task_or_action()
         return result
